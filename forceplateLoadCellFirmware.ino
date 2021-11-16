@@ -9,7 +9,7 @@ const char * password = "mind1234";
 
 
 String FirmwareVer = {
-  "0.1"
+  "0.2"
 };
 //#define URL_fw_Version "https://raw.githubusercontent.com/programmer131/ESP8266_ESP32_SelfUpdate/master/esp32_ota/bin_version.txt"
 //#define URL_fw_Bin "https://raw.githubusercontent.com/programmer131/ESP8266_ESP32_SelfUpdate/master/esp32_ota/fw.bin"
@@ -19,6 +19,7 @@ String FirmwareVer = {
 //#define URL_fw_Version "http://cade-make.000webhostapp.com/version.txt"
 //#define URL_fw_Bin "http://cade-make.000webhostapp.com/firmware.bin"
 
+#define BLINKINTERVAL 1000
 #ifndef LED_BUILTIN
 #define LED_BUILTIN 2
 #endif
@@ -103,7 +104,7 @@ void loop() {
   }
   repeatedCall();
 
-  if ((millis()-lastBlink)>100) {
+  if ((millis()-lastBlink)>BLINKINTERVAL) {
     digitalWrite(LED_BUILTIN, ledOn);
     lastBlink = millis();
     if (ledOn == LOW) {
