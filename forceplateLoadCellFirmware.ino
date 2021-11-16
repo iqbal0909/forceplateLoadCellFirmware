@@ -30,6 +30,7 @@ int FirmwareVersionCheck();
 int ledOn = LOW;
 unsigned long previousMillis = 0; // will store last time LED was updated
 unsigned long previousMillis_2 = 0;
+unsigned long lastBlink = 0;
 const long interval = 60000;
 const long mini_interval = 1000;
 void repeatedCall() {
@@ -48,13 +49,7 @@ void repeatedCall() {
     Serial.print(num++);
     Serial.print(" Active fw version:");
     Serial.println(FirmwareVer);
-    digitalWrite(LED_BUILTIN, ledOn);
-    if (ledOn == LOW) {
-      ledOn = HIGH;
-    } else if (ledOn == HIGH) {
-      ledOn = LOW;
-    }
-
+    
     if (WiFi.status() == WL_CONNECTED)
     {
       Serial.println("wifi connected");
@@ -107,6 +102,16 @@ void loop() {
     button_boot.pressed = false;
   }
   repeatedCall();
+
+  if ((millis()-lastBlink)>100) {
+    digitalWrite(LED_BUILTIN, ledOn);
+    lastBlink = millis();
+    if (ledOn == LOW) {
+      ledOn = HIGH;
+    } else if (ledOn == HIGH) {
+      ledOn = LOW;
+    }
+  }
 }
 
 void connect_wifi() {
