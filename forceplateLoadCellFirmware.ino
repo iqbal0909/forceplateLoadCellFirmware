@@ -9,12 +9,16 @@ const char * password = "mind1234";
 
 
 String FirmwareVer = {
-  "0.2"
+  "0.3"
 };
 //#define URL_fw_Version "https://raw.githubusercontent.com/programmer131/ESP8266_ESP32_SelfUpdate/master/esp32_ota/bin_version.txt"
 //#define URL_fw_Bin "https://raw.githubusercontent.com/programmer131/ESP8266_ESP32_SelfUpdate/master/esp32_ota/fw.bin"
-#define URL_fw_Version "https://raw.github.com/iqbal0909/forceplateLoadCellFirmware/tree/main/bin_version.txt"
-#define URL_fw_Bin "https://raw.github.com/iqbal0909/forceplateLoadCellFirmware/tree/mainfw.bin"
+
+//#define URL_fw_Version "https://raw.github.com/iqbal0909/forceplateLoadCellFirmware/tree/main/bin_version.txt"
+//#define URL_fw_Bin "https://raw.github.com/iqbal0909/forceplateLoadCellFirmware/tree/mainfw.bin"
+
+#define URL_fw_Version "https://raw.githubusercontent.com/iqbal0909/forceplateLoadCellFirmware/main/bin_version.txt"
+#define URL_fw_Bin "https://raw.githubusercontent.com/iqbal0909/forceplateLoadCellFirmware/main/fw.bin"
 
 //#define URL_fw_Version "http://cade-make.000webhostapp.com/version.txt"
 //#define URL_fw_Bin "http://cade-make.000webhostapp.com/firmware.bin"
