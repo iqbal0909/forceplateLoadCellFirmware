@@ -19,6 +19,8 @@ String FirmwareVer = {
   //#define URL_fw_Version "http://cade-make.000webhostapp.com/version.txt"
   //#define URL_fw_Bin "http://cade-make.000webhostapp.com/firmware.bin"
 
+  #define LED_BUILTIN 2
+
   void connect_wifi();
   void firmwareUpdate();
   int FirmwareVersionCheck();
